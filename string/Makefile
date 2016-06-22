@@ -1,8 +1,8 @@
 LIBS = -lm
-OBJS1 = string.o
+OBJS1 = Demo.o
+OBJS2 = Demo_String.o
 
-main: $(OBJS1)
-	g++ -o string $(OBJS1) $(LIBS)
-
+main: $(OBJS1) $(OBJS2)
+	g++ -o Demo $(OBJS1) $(OBJS2) $(LIBS)
 clean:
-	rm -f string $(OBJS1)
+	rm -f Demo $(OBJS1) $(OBJS2)
