@@ -1,6 +1,11 @@
 #include <iostream>
 #include "Demo_String.h"
 
+#define swap(x,y) \
+	char temp = x;\
+	x = y;\
+	y = temp;
+
 using namespace std;
 
 Demo_String::Demo_String(const char *s)
@@ -31,20 +36,8 @@ void Demo_String::String_Reverse()
 	u16 i = 0;
 	char temp;
 	for(i = 0; i < String_Length()/2; i++){
-		temp = s[i];
-		s[i] = s[(String_Length())-i-1];
-		s[(String_Length())-i-1] = temp;
+		swap(this -> s[i], this -> s[String_Length()-i-1]);
 	}
 	cout << "String Reverse is " << s << endl;
 	
 }
-
-/*int main()
-{
-	Demo_String str("123456");
-	str.Print_String();
-	cout << "Length is " << str.String_Length() << endl;
-	str.String_Reverse();
-
-	return 0;
-}*/
